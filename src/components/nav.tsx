@@ -4,7 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
@@ -51,12 +50,12 @@ export function Nav({ user }: { user: NavUser }) {
               </Avatar>
             </DropdownMenuTrigger>
             <DropdownMenuContent align="end" className="w-56">
-              <DropdownMenuLabel className="flex flex-col">
+              <div className="flex flex-col px-2 py-1.5 text-sm">
                 <span className="font-medium">{user.name ?? "Signed in"}</span>
-                <span className="text-xs font-normal text-muted-foreground">
+                <span className="truncate text-xs text-muted-foreground">
                   {user.email}
                 </span>
-              </DropdownMenuLabel>
+              </div>
               <DropdownMenuSeparator />
               <form action={handleSignOut} className="p-1">
                 <button
