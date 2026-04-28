@@ -4,7 +4,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
@@ -59,13 +58,14 @@ export function Nav({ user }: { user: NavUser }) {
                 </span>
               </DropdownMenuLabel>
               <DropdownMenuSeparator />
-              <form action={handleSignOut}>
-                <DropdownMenuItem
-                  render={<button type="submit" className="w-full" />}
+              <form action={handleSignOut} className="p-1">
+                <button
+                  type="submit"
+                  className="flex w-full items-center gap-1.5 rounded-md px-1.5 py-1.5 text-sm text-destructive hover:bg-destructive/10 focus:bg-destructive/10 focus:outline-none"
                 >
-                  <LogOut className="mr-2 h-4 w-4" />
+                  <LogOut className="h-4 w-4" />
                   Sign out
-                </DropdownMenuItem>
+                </button>
               </form>
             </DropdownMenuContent>
           </DropdownMenu>
