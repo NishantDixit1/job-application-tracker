@@ -2,6 +2,7 @@ import { auth, signIn } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Footer } from "@/components/footer";
 import Link from "next/link";
 
 type SearchParams = Promise<{ callbackUrl?: string; error?: string }>;
@@ -21,8 +22,9 @@ export default async function LoginPage({
   }
 
   return (
-    <div className="flex flex-1 items-center justify-center p-6">
-      <Card className="w-full max-w-md">
+    <div className="flex flex-1 flex-col">
+      <div className="flex flex-1 items-center justify-center p-6">
+        <Card className="w-full max-w-md">
         <CardHeader className="space-y-1 text-center">
           <CardTitle className="text-2xl">Welcome to JobTrack</CardTitle>
           <CardDescription>
@@ -50,7 +52,9 @@ export default async function LoginPage({
             </Link>
           </p>
         </CardContent>
-      </Card>
+        </Card>
+      </div>
+      <Footer />
     </div>
   );
 }

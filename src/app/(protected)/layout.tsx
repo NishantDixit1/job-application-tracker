@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { auth } from "@/lib/auth";
 import { Nav } from "@/components/nav";
+import { Footer } from "@/components/footer";
 
 export default async function ProtectedLayout({
   children,
@@ -18,6 +19,7 @@ export default async function ProtectedLayout({
           {children}
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

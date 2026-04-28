@@ -2,6 +2,7 @@ import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { redirect } from "next/navigation";
 import { buttonVariants } from "@/components/ui/button";
+import { Footer } from "@/components/footer";
 import { Sparkles, KanbanSquare, ShieldCheck } from "lucide-react";
 
 export default async function Home() {
@@ -63,12 +64,7 @@ export default async function Home() {
         </div>
       </main>
 
-      <footer className="border-t">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4 text-xs text-muted-foreground">
-          <span>Built with Next.js 16.</span>
-          <span>© {new Date().getFullYear()} JobTrack</span>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
